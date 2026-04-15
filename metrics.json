@@ -1,0 +1,39 @@
+{
+  "roc_auc": 0.7044432367103397,
+  "pr_auc": 0.59807148694428,
+  "best_f1": 0.6268982127007555,
+  "f1_macro": 0.6053173003825763,
+  "threshold": 1.4774693227082025e-05,
+  "train_time_s": 14705.686252355576,
+  "n_parameters": 301000,
+  "epochs_trained": 80,
+  "confusion_matrix": [
+    [
+      10319,
+      11857
+    ],
+    [
+      2860,
+      12364
+    ]
+  ],
+  "n_features": 8,
+  "feature_columns": [
+    "Accelerometer1RMS",
+    "Accelerometer2RMS",
+    "Current",
+    "Pressure",
+    "Temperature",
+    "Thermocouple",
+    "Voltage",
+    "Volume Flow RateRMS"
+  ],
+  "config": {
+    "seq_len": 60,
+    "batch_size": 256,
+    "lr": 0.0005,
+    "d_model": 64,
+    "n_heads": 4,
+    "n_layers": 3
+  }
+}
