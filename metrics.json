@@ -1,39 +1,84 @@
 {
-  "roc_auc": 0.7044432367103397,
-  "pr_auc": 0.59807148694428,
-  "best_f1": 0.6268982127007555,
-  "f1_macro": 0.6053173003825763,
-  "threshold": 1.4774693227082025e-05,
-  "train_time_s": 14705.686252355576,
-  "n_parameters": 301000,
-  "epochs_trained": 80,
+  "roc_auc": 0.7034621187529368,
+  "pr_auc": 0.5054788217584508,
+  "best_f1": 0.584846093133386,
+  "f1_macro": 0.6219206154483785,
+  "threshold": 0.17648312048127301,
+  "best_model": "IsolationForest",
   "confusion_matrix": [
     [
-      10319,
-      11857
+      2033,
+      1665
     ],
     [
-      2860,
-      12364
+      439,
+      1482
     ]
   ],
-  "n_features": 8,
-  "feature_columns": [
-    "Accelerometer1RMS",
-    "Accelerometer2RMS",
-    "Current",
-    "Pressure",
-    "Temperature",
-    "Thermocouple",
-    "Voltage",
-    "Volume Flow RateRMS"
-  ],
+  "per_model_scores": {
+    "IsolationForest": {
+      "roc_auc": 0.7034621187529368,
+      "pr_auc": 0.5054788217584508,
+      "best_f1": 0.584846093133386
+    },
+    "OneClassSVM": {
+      "roc_auc": 0.5046021471712976,
+      "pr_auc": 0.37226776810143963,
+      "best_f1": 0.5080849926500067
+    },
+    "LOF": {
+      "roc_auc": 0.5248678957265194,
+      "pr_auc": 0.4006709801714678,
+      "best_f1": 0.5075706820313547
+    },
+    "MLP_AE": {
+      "roc_auc": 0.5635931208084396,
+      "pr_auc": 0.42116472880022954,
+      "best_f1": 0.5078177201657089
+    },
+    "Ensemble": {
+      "roc_auc": 0.6786253328824984,
+      "pr_auc": 0.48514292097111344,
+      "best_f1": 0.5658627087198516
+    }
+  },
+  "ensemble_weights": {
+    "IsolationForest": 0.30784683588807144,
+    "OneClassSVM": 0.23721993681524584,
+    "LOF": 0.23456033082555006,
+    "MLP_AE": 0.22037289647113276
+  },
+  "train_time_s": 42.050682067871094,
   "config": {
-    "seq_len": 60,
-    "batch_size": 256,
-    "lr": 0.0005,
-    "d_model": 64,
-    "n_heads": 4,
-    "n_layers": 3
+    "windows": [
+      10,
+      30
+    ],
+    "n_features": 96,
+    "feature_columns": [
+      "Accelerometer1RMS",
+      "Accelerometer2RMS",
+      "Current",
+      "Pressure",
+      "Temperature",
+      "Thermocouple",
+      "Voltage",
+      "Volume Flow RateRMS"
+    ],
+    "contamination_rate": 0.3555547080584264,
+    "ae_hidden_layers": [
+      128,
+      64,
+      32,
+      64,
+      128
+    ],
+    "ae_max_iter": 30,
+    "iso_n_estimators": 200,
+    "ocsvm_max_samples": 15000,
+    "lof_max_samples": 20000,
+    "train_size": 26221,
+    "val_size": 5619,
+    "test_size": 5619
   }
 }
